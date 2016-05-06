@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+long long int fibonanci_hesapla(int n, long long int a, long long int b)
+{
+	
+  if (n == 0) 
+  {
+  	return a;
+  	
+  }
+ if (n == 1) 
+  {
+  	
+  	return b;
+  	
+  }
+  return fibonanci_hesapla(n - 1, b, a + b);
+}
+
+int main ()
+{
+  int n;
+  while (1) 
+  {
+    std::cout << "Aranan Fibonaci degerini giriniz: ";
+    std::cin >> n;
+    if (n > 0) 
+      std::cout << "Sonuc:" << fibonanci_hesapla(n, 0, 1) << std::endl;
+  }
+  return 0;
+}
